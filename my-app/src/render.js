@@ -13,3 +13,5 @@ async function getVideoSources() {
   const inputSources = await desktopCapturer.getSources({
     types: ['window', 'screen']
   });
+
+}
