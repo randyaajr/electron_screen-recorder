@@ -14,4 +14,13 @@ async function getVideoSources() {
     types: ['window', 'screen']
   });
 
+  const videoOptionsMenu = Menu.buildFromTemplate(
+    inputSources.map(source => {
+      return {
+        label: source.name,
+        click: () => selectSource(source)
+      };
+    })
+  );
+    videoOptionsMenu.popup();
 }
