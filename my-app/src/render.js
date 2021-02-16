@@ -6,6 +6,10 @@ const videoSelectBtn = document.getElementById('videoSelectBtn');
 
 
 const { desktopCapturer, remote } = require('electron');
+videoSelectBtn.onclick = getVideoSources;
 
 // Get available video sources
-function getVideoSources() {}
+async function getVideoSources() {
+  const inputSources = await desktopCapturer.getSources({
+    types: ['window', 'screen']
+  });
